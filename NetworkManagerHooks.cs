@@ -21,7 +21,7 @@ namespace OldMate
                 AFiredFirst = true;
                 SeenFire = true;
 
-                MelonLogger.Log("[OldMate] A fired first");
+                MelonLogger.Msg("[OldMate] A fired first");
             }
 
             (AFiredFirst ? OnJoin : OnLeave)?.Invoke(player);
@@ -34,7 +34,7 @@ namespace OldMate
                 AFiredFirst = false;
                 SeenFire = true;
 
-                MelonLogger.Log("[OldMate] B fired first");
+                MelonLogger.Msg("[OldMate] B fired first");
             }
 
             (AFiredFirst ? OnLeave : OnJoin)?.Invoke(player);

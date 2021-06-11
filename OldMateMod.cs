@@ -13,7 +13,7 @@ namespace OldMate
         public const string Name = "OldMate";
         public const string Author = "dave-kun";
         public const string Company = null;
-        public const string Version = "1.5.0";
+        public const string Version = "1.6.0";
         public const string DownloadLink = "https://github.com/dave-kun/OldMate";
     }
 
@@ -24,7 +24,7 @@ namespace OldMate
 
         public override void OnApplicationStart()
         {
-            if (MelonHandler.Mods.Any(it => it.Info.SystemType.Name == nameof(UiExpansionKitMod)))
+            if (MelonHandler.Mods.Any(it => it.Info.SystemType.Name == "UiExpansionKitMod"))
             {
                 typeof(UiExpansionKitSupport).GetMethod(nameof(UiExpansionKitSupport.Initialize), BindingFlags.Static | BindingFlags.Public)!.Invoke(null, new object[0]);
             }
@@ -38,7 +38,7 @@ namespace OldMate
             while (ReferenceEquals(NetworkManager.field_Internal_Static_NetworkManager_0, null))
                 yield return null;
 
-            MelonLogger.Log("Initializing OldMate.");
+            MelonLogger.Msg("Initializing OldMate.");
             NetworkManagerHooks.Initialize();
             NetworkManagerHooks.OnJoin += OnPlayerJoined;
         }

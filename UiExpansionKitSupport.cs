@@ -10,8 +10,8 @@ namespace OldMate
 
         public static void Initialize()
         {
-            ExpansionKitApi.RegisterSimpleMenuButton(ExpandedMenu.UserDetailsMenu, "Remove Nickname", RemoveNicknameUserDetailsMenu);
-            ExpansionKitApi.RegisterSimpleMenuButton(ExpandedMenu.UserDetailsMenu, "Update Nickname", UpdateNicknameUserDetailsMenu);
+            ExpansionKitApi.GetExpandedMenu(ExpandedMenu.UserDetailsMenu).AddSimpleButton("Remove Nickname", RemoveNicknameUserDetailsMenu);
+            ExpansionKitApi.GetExpandedMenu(ExpandedMenu.UserDetailsMenu).AddSimpleButton("Update Nickname", UpdateNicknameUserDetailsMenu);
         }
 
         private static void UpdateNicknameUserDetailsMenu()
