@@ -74,7 +74,7 @@ namespace OldMate
         {
             if (NicknameManager.Contains(player?.prop_APIUser_0?.id))
             {
-                player.prop_VRCPlayer_0.field_Public_PlayerNameplate_0.field_Public_TextMeshProUGUI_0.text = !OriginalName ? NicknameManager.GetModifiedName(player.field_Private_APIUser_0.id) : player.field_Private_APIUser_0.displayName;
+                player.prop_VRCPlayer_0.field_Public_PlayerNameplate_0.field_Public_TextMeshProUGUI_0.text = !OriginalName ? NicknameManager.GetModifiedName(player.prop_APIUser_0.id) : player.prop_APIUser_0.displayName;
             }
         }
 

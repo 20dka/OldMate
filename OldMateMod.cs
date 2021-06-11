@@ -24,7 +24,7 @@ namespace OldMate
 
         public override void OnApplicationStart()
         {
-            if (MelonHandler.Mods.Any(it => it.Info.SystemType.Name == "UiExpansionKitMod"))
+            if (MelonHandler.Mods.Any(it => it.Info.Name.Equals("UI Expansion Kit")))
             {
                 typeof(UiExpansionKitSupport).GetMethod(nameof(UiExpansionKitSupport.Initialize), BindingFlags.Static | BindingFlags.Public)!.Invoke(null, new object[0]);
             }
@@ -47,7 +47,7 @@ namespace OldMate
         {
             if (player != null)
             {
-                if (NicknameManager.Contains(player.field_Private_APIUser_0.id))
+                if (NicknameManager.Contains(player.prop_APIUser_0.id))
                 {
                     VRChatAPI.UpdatePlayerNameplate(player);
                 }
